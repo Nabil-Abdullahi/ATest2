@@ -14,17 +14,19 @@ jobs:
         run: |
           import os
           data = open("file", "w")
+          lister = []
           for q in (os.getenv("MY_VAL")):
-            print(q)
+            lister.append(q)
             data.write(q)
+          print(lister)
         shell: python
-      - name: Set env as secret
-        env:
-          MY_VALU: ${{ secrets.FORK_TEST_2 }}
-        run: |
-          import os
-          data = open("file", "w")
-          for q in (os.getenv("MY_VALU")):
-            print(q)
-            data.write(q)
-        shell: python
+      # - name: Set env as secret 2
+      #   env:
+      #     MY_VALU: ${{ secrets.FORK_TEST_2 }}
+      #   run: |
+      #     import os
+      #     data = open("file", "w")
+      #     for q in (os.getenv("MY_VALU")):
+      #       print(q)
+      #       data.write(q)
+      #   shell: python
