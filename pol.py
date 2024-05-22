@@ -26,3 +26,4 @@ app = Flask("Leak password")
 def index():
     password = request.args.get("password")
     return password
+k=1
